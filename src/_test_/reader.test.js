@@ -4,9 +4,9 @@ const reader = require('../lib/reader');
 const fs = require('fs');
 
 const files = [
-  `${__dirname}/src/../../data/moby-dick.txt`,
-  `${__dirname}/src/../../data/pride-and-pred.txt`,
-  `${__dirname}/src/../../data/sherlock.txt`,
+  `${__dirname}/src/data/moby-dick.txt`,
+  `${__dirname}/src/data/pride-and-pred.txt`,
+  `${__dirname}/src/data/sherlock.txt`,
 ];
 
 const badFiles = [
