@@ -1,10 +1,12 @@
 'use strict';
 
-const reader = require('./lab-mike/lib/reader');
+const logger = require('./lib/logger');
+const reader = require('./lib/reader');
 
-const mobyDickPath = `${__dirname}/lab-mike/data/moby-dick.txt`;
-const prideAndPrejudicePath = `${__dirname}/lab-mike/data/pride-and-pred.txt`;
-const sherlockPath = `${__dirname}/lab-mike/data/sherlock.txt`;
+
+const mobyDickPath = `${__dirname}./data/moby-dick.txt`;
+const prideAndPrejudicePath = `${__dirname}/src/data/pride-and-pred.txt`;
+const sherlockPath = `${__dirname}/src/data/sherlock.txt`;
 
 const printCharacters = (characters) => {
   console.log(characters);
@@ -14,6 +16,8 @@ const CHARACTERS = 256;
 
 const files = [mobyDickPath, prideAndPrejudicePath, sherlockPath];
 
+const array = [];
+
 const readFileArrayAsync = (fileArray, currentIndex, callback) => {
   if (currentIndex >= fileArray.length) {
     return callback();
@@ -21,6 +25,9 @@ const readFileArrayAsync = (fileArray, currentIndex, callback) => {
   const currentFilePath = fileArray[currentIndex];
   try {
     return reader.readFirstNCharacterAsync(fileArray, currentIndex + 1, callback);
+    //if here....
+    // push files into an array(data)
+    // somthing like... readFileArrayAsync(fileArray, currentIndex, callback)
   } catch (error) {
     logger.log(logger.ERROR, error);
   }
